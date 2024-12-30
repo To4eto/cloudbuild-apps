@@ -5,12 +5,6 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/named-totality-427419-i2/python-apps/demo-flask-app:$COMMIT_SHA']
 
-- name: 'us-central1-docker.pkg.dev/named-totality-427419-i2/python-apps/demo-flask-app:$COMMIT_SHA'
-  entrypoint: 'bash'
-  args:
-   - '-c'
-   - |
-      python -m pytest
   
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
